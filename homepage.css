@@ -1,0 +1,41 @@
+.UpcomingEvents{
+    background-color: #140505;
+    display: flex;
+    width: 30%;
+    color: aliceblue;
+    margin: 10px;
+    padding: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.UpcomingEvents>h2{
+    display: flex;
+    justify-content: center;
+    color: gold;
+    width: 100%;
+}
+.EventPreview{
+    background-color: blueviolet;
+    justify-content: baseline;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.EventPreview p {
+    background-color: coral;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+#main{
+    font-size:larger;
+    font-family:serif;
+}
+.EventPreview p:first-child{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-variant: small-caps;
+}

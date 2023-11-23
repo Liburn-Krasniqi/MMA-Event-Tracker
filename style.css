@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header{
+    margin: 0;
+    background-color: #000000;
+    padding: 15px 15px 15px 5px;
+}
+
+header>.row{
+    max-width: 1170px;
+    margin: auto;
+}
+
+#logo{
+    color: gold;
+    font-family: cursive;
+    font-style: italic;
+    font-style: bold;
+    font-weight: 800;
+}
+
+a{
+    text-decoration: none;
+}
+
+header>.row>a{
+    background-color: rgb(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    width: 14%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+header>.row>a:hover{
+    color: rgb(224, 191, 0);
+}
+
+.dropdown{
+    width: 14%;
+    position: relative;
+    padding-left: 2.25%;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown p{
+    background-color: rgb(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    width: 14%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.dropdown p:hover{
+    color: gold;
+}
+
+footer{
+    margin: 0;
+    background-color: black;
+    padding: 70px 0px;
+}
+
+footer>.container{
+    max-width:1170px;
+    margin: auto;
+}
+
+ul{
+    list-style: none;
+}
+
+.footer-column{
+    width: 33%;
+    padding: 0 15px;
+}
+
+.footer-column>h4{
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-column>h4::before{
+    content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: brown;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+} /* qikjo osht qajo vija dekoruse perfuni h4*/ 
+
+.footer-column>ul>li:not(:last-child){
+	margin-bottom: 5px;
+}
+
+.footer-column>ul>li>a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: rgb(225, 225, 225);
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-column>ul>li>a:hover{
+    color: gold;
+    padding-left: 9px;
+}
+
+.footer-column>.SocialLinks-section>a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(231, 196, 0, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: gold;
+    transition: all 0.3s ease;
+}
+
+.footer-column>.SocialLinks-section>a:hover{
+    color: white;
+    background-color: gold;
+}
+
+
+/* E bojna responsive tash */
+@media(max-width: 767px){
+    .footer-column{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 565px){
+    .footer-column{
+        width: 100%;
+    }
+}

@@ -1,10 +1,127 @@
 main{
-    margin: 30px 10px 10px 10px;
+    background: linear-gradient(120deg,rgb(179, 45, 45),#ffbb00);
+    padding:30px 10px 10px 10px;
+}
 
+.aboutUs-Container{
     padding: 25px 50px 75px 100px;
 
-    border: solid;
-    border-color: black;
-    border-width: 1px;
-    border-radius: 5px;
+
+    border-radius: 10px;
+    background-color: white;
+
+    box-shadow: 10px 10px 30px -5px;
 }
+
+.aboutUs-Container:not(:first-child){
+    margin-top: 15px;
+}
+
+#About-title-cards{
+    margin-top: 15px;
+    padding: 10px 0px 0px 20px;
+
+    font-size: xx-large;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 15px rgb(127, 31, 31);
+}
+
+.faq-container{
+    max-width: auto;
+    margin: 0 10vw 0 3vw;
+}
+
+.faq-container:not(:first-child){
+    margin-top: 15px;
+}
+
+.faq {
+    background-color: transparent;
+    box-shadow: 10px 10px 30px -8px black;
+    text-shadow: 0px 0px 15px rgb(127, 31, 31);
+    color: white;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s ease;
+  }
+  
+  .faq.active {
+    text-shadow:none;
+    color: black;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq.active::before,
+  .faq.active::after {
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    color: #ccaf2e;
+    font-size: 7rem;
+    position: absolute;
+    opacity: 0.2;
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+  }
+  
+  .faq.active::before {
+    color: #db3450;
+    top: -10px;
+    left: -30px;
+    transform: rotateY(180deg);
+  }
+  
+  .faq-title {
+    margin: 0 35px 0 0;
+  }
+  
+  .faq-text {
+    display: none;
+    margin: 30px 0 0;
+  }
+  
+  .faq.active .faq-text {
+    display: block;
+  }
+  
+  .faq-toggle {
+    background-color: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+  }
+  
+  .faq-toggle:focus {
+    outline: 0;
+  }
+  
+  .faq-toggle .fa-times {
+    color: white;
+    display: none;
+  }
+  
+  .faq.active .faq-toggle .fa-times {
+    display: block;
+  }
+  
+  .faq.active .faq-toggle .fa-chevron-down {
+    display: none;
+  }
+  
+  .faq.active .faq-toggle {
+  background-color: #9fa4a8;
+  }

@@ -47,3 +47,36 @@ function backToTop(){
         behavior: 'smooth'
     });
 }
+
+//shko te filan veni (dmth te FAQ) [ish kon mir me dit me bo ma general qit funksion]
+function scrollToTarget() {
+    var targetElement = document.getElementById('About-title-cards');
+    console.log('Current Path:', window.location.pathname);
+
+    if (window.location.pathname === '/Abouti.html') {
+        console.log('Scrolling to target element.');
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        console.log('Redirecting to Abouti.html.');
+        window.location.href = 'Abouti.html#About-title-cards';
+    }
+}
+/*validimi */
+function validateForm() {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var error = document.getElementById('error');
+    var valid = document.getElementById('valid');
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "" || password === "") {
+        error.textContent = "Please fill in all fields.";
+    } else if (!emailRegex.test(email)) {
+        error.textContent = "Please enter a valid email address.";
+    } else {
+        error.textContent = "";
+        setTimeout(function() {
+            valid.textContent = "LogIn successful!";
+        }, 100);
+    }
+}

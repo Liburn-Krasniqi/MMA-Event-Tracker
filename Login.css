@@ -92,3 +92,10 @@ main{
     color: orange;
     transform: translateY(-30px);
 }
+#error {
+    color: rgba(255, 0, 0, 0.9);
+}
+
+#valid{
+    color: rgba(0, 128, 0, 0.9);
+}

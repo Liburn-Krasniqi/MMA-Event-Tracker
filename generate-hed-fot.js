@@ -11,7 +11,7 @@ function generateHeader(){
     e shkruva O per momentin masi simetrike 
     -->
     <a href="Rankings.html">Rankings</a>
-    <a href="Login.html">Log In</a>
+    
     <div class="dropdown">
         <p class="dropbtn" > Search </p>
         <div class="dropdown-content" id="myDropdown">
@@ -20,6 +20,9 @@ function generateHeader(){
             <a href="#">Link 3</a>
           </div>
         </div>
+        <i id="theme-toggle">☾</i>
+        <a href="Login.html">Log In</a>
+        
     </div> 
     `;
  return setHtmlCode;
@@ -67,3 +70,16 @@ function generateFooter(){
 return setHtmlCode;
 }
 document.querySelector('footer').innerHTML=generateFooter()
+
+// Get the theme toggle button element
+const themeToggle = document.getElementById('theme-toggle');
+
+// Function to toggle the dark theme
+function toggleDarkTheme() {
+  document.body.classList.toggle('dark-theme');
+  document.getElementById('theme-toggle').innerText='☼';
+  
+}
+
+// Event listener for the theme toggle button
+themeToggle.addEventListener('click', toggleDarkTheme);

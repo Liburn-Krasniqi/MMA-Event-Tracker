@@ -5,9 +5,20 @@
     box-sizing: border-box;
 }
 
+:root {
+  --ezez:black;
+  --bardh:#E9E3D8;
+}
+.dark-theme {
+    --ezez: #e9e3d8;
+    --bardh: #131516;
+  }
+
+
 body{
     line-height: 1.5;
     font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg,rgb(179, 45, 45),#ffbb00);
 }
 
 .row{
@@ -17,13 +28,14 @@ body{
 
 header{
     margin: 0;
-    background-color: #000000;
+    background-color: var(--ezez);
     padding: 15px 15px 15px 5px;
 }
 
 header>.row{
     max-width: 1170px;
     margin: auto;
+    justify-content: space-around;
 }
 
 #logo{
@@ -39,13 +51,14 @@ a{
 }
 
 header>.row>a{
-    background-color: rgb(0, 0, 0, 0.2);
+    background-color: var(--ezez);
     box-sizing: border-box;
-    width: 14%;
+    
+    
     text-align: center;
     height: 30px;
     line-height: 30px;
-    color: white;
+    color: var(--bardh);
     font-weight: 500;
     transition: all 0.2s ease;
 }
@@ -55,9 +68,9 @@ header>.row>a:hover{
 }
 
 .dropdown{
-    width: 14%;
+    
     position: relative;
-    padding-left: 2.25%;
+    
   }
 
   .dropdown-content {
@@ -85,7 +98,7 @@ header>.row>a:hover{
     text-align: center;
     height: 30px;
     line-height: 30px;
-    color: white;
+    color: var(--bardh);
     font-weight: 500;
     transition: all 0.2s ease;
 }
@@ -94,9 +107,19 @@ header>.row>a:hover{
     color: gold;
 }
 
+/*darkmode */ 
+#theme-toggle {
+    margin-left: 0px;
+    color: var(--bardh);
+    width: 30px;
+    height: 30px;
+    display: inline;
+    font-size: x-large;
+  }
+
 footer{
     margin: 0;
-    background-color: black;
+    background-color: var(--ezez);
     padding: 70px 0px;
 }
 
@@ -116,7 +139,7 @@ ul{
 
 .footer-column>h4{
     font-size: 18px;
-    color: white;
+    color: var(--bardh);
     text-transform: capitalize;
     margin-bottom: 35px;
     font-weight: 500;
@@ -141,7 +164,7 @@ ul{
 .footer-column>ul>li>a{
     font-size: 16px;
     text-transform: capitalize;
-    color: rgb(225, 225, 225);
+    color: var(--bardh);
     text-decoration: none;
     font-weight: 300;
     display: block;
@@ -172,7 +195,7 @@ ul{
 }
 
 .footer-column>.SocialLinks-section>a:hover{
-    color: white;
+    color: var(--bardh);
     background-color: gold;
 }
 

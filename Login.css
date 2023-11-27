@@ -6,10 +6,11 @@ main{
 #login-container{
     text-align: center;
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--ezez);
     padding: 20px 40px;
     width: 50%;
-    box-shadow: 10px 10px 30px -5px;
+    box-shadow: 10px 10px 30px -5px black;
+    color: var(--bardh);
 }
 
 #login-container h1 {
@@ -27,8 +28,8 @@ main{
     display: inline-block;
     width: 50%;
     background-color: orange;
-    box-shadow: 5px 10px 15px -15px black;
-    color: white;
+    box-shadow: 5px 10px 15px -15px var(--ezez);
+    color: var(--bardh);
     text-shadow: 0px 0px 8px rgb(127, 31, 31);
     padding: 5px;
     font-family: inherit;
@@ -59,12 +60,12 @@ main{
 .form-control input {
     background-color: transparent;
     border: 0;
-    border-bottom: 2px black solid;
+    border-bottom: 2px var(--bardh) solid;
     display: block;
     width: 100%;
     padding: 15px 0;
     font-size: 18px;
-    color: black;
+    color: var(--bardh);
 }
 
 .form-control input:focus,

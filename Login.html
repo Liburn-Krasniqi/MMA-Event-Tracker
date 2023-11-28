@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>LogIn</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="AboutMain.css">
     <link rel="stylesheet" href="Login.css">
@@ -15,21 +15,22 @@
 
     <main>
         <div id="login-container">
+            <div id="error"></div><div id="valid"></div>
             <h1>Please Login</h1>
-            <form>
+            <form id="loginForm" action="/" method="GET">
                 <div class="form-control">
-                    <input type="text" required>
-                    <label for="">Email</label>
+                    <input id="email" name="email" type="text" required>
+                    <label for="email">Email</label>
                 </div>
                 
                 <div class="form-control">
-                    <input type="password" required>
-                    <label for="">Password</label>
+                    <input id="password" name="password" type="password" required>
+                    <label for="Password">Password</label>
                 </div>
     
-                <button class="btn">Login</button>
+                <button class="btn" type="button" onclick="validateForm()">Login</button>
     
-                <p>Don't have an account? <a href="">Register.</a></p>
+                <p>Don't have an account? <a href="#">Register.</a></p>
             </form>
         </div>
     </main>

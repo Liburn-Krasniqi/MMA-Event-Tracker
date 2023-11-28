@@ -37,7 +37,7 @@ function generateFooter(){
       <div class="footer-column">
           <h4>Company</h1>
           <ul>
-              <li><a href="">About us</a></li>
+              <li><a href="Abouti.html">About us</a></li>
               <li><a href="">Sign for news letter</a></li>
               <li><a href="">Our sports betting site</a></li>
               <li><a href="">Privacy policy</a></li>
@@ -48,7 +48,7 @@ function generateFooter(){
       <div class="footer-column">
           <h4>Get Help</h1>
           <ul>
-              <li><a href="">FAQ</a></li>
+              <li><a onclick="scrollToTarget()">FAQ</a></li>
               <li><a href="">Promote your MMA event</a></li>
               <li><a href="">Site feedback</a></li>
           </ul>

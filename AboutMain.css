@@ -1,11 +1,11 @@
 
 main{
-    
-    padding:30px 10px 10px 10px;
+  
+  padding:30px 10px 10px 10px;
 }
 
 .aboutUs-Container{
-    padding: 25px 50px 75px 100px;
+  padding: 25px 50px 75px 100px;
 
 
     border-radius: 10px;
@@ -16,7 +16,7 @@ main{
 }
 
 .aboutUs-Container:not(:first-child){
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 #About-title-cards{
@@ -28,12 +28,12 @@ main{
 }
 
 .faq-container{
-    max-width: auto;
-    margin: 0 10vw 0 3vw;
+  max-width: auto;
+  margin: 0 10vw 0 3vw;
 }
 
 .faq-container:not(:first-child){
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .faq {
@@ -126,3 +126,23 @@ main{
   .faq.active .faq-toggle {
   background-color: #9fa4a8;
   }
+  to {
+    opacity: 1;
+  } 
+}
+.btnExit {
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+  animation-name: btnExit;
+  opacity: 1;
+}
+/* ZoomOut */
+@keyframes btnExit {
+ from {
+  opacity: 1;
+ }
+ to {
+  opacity: 0;
+  transform: scale3d(0.3, 0.3, 0.3);
+ }
+}

@@ -126,22 +126,61 @@ main{
   .faq.active .faq-toggle {
   background-color: #9fa4a8;
   }
+  
+ #back-to-top-btn {
+   display: none;
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   font-size: 26px;
+   width: 50px;
+   height: 50px;
+   background-color: rgba(255, 255, 255, 0.4);
+   color: #9fa4a8;
+   cursor: pointer;
+   outline: none;
+   border: 2px solid #9fa4a8;
+   border-radius: 50%;
+   transition-duration: 0.2s;
+   transition-timing-function: ease-in-out;
+   transition-property: background-color, color;
+ }
+ 
+ #back-to-top-btn:hover, #back-to-top-btn:active{
+   background-color: #9fa4a8b7;
+   color: rgba(255, 255, 255, 0.504);
+ }
+ 
+ /*animaCionEt wowowo*/
+ .btnEntrance{
+   animation-duration: 0.5s;
+   animation-fill-mode: both;
+   animation-name: btnEntrance;
+ }
+ 
+ /* zoomIn */
+ @keyframes btnEntrance {
+   from {
+     opacity: 0;
+     transform: scale3d(0.3, 0.3, 0.3);
+   }
+   to {
+     opacity: 1;
+   } 
+ }
+ .btnExit {
+   animation-duration: 0.25s;
+   animation-fill-mode: both;
+   animation-name: btnExit;
+   opacity: 1;
+ }
+ /* ZoomOut */
+ @keyframes btnExit {
+  from {
+   opacity: 1;
+  }
   to {
-    opacity: 1;
-  } 
-.btnExit {
-  animation-duration: 0.25s;
-  animation-fill-mode: both;
-  animation-name: btnExit;
-  opacity: 1;
-}
-/* ZoomOut */
-@keyframes btnExit {
- from {
-  opacity: 1;
+   opacity: 0;
+   transform: scale3d(0.3, 0.3, 0.3);
+  }
  }
- to {
-  opacity: 0;
-  transform: scale3d(0.3, 0.3, 0.3);
- }
-}

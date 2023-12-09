@@ -10,17 +10,18 @@ function generateHeader(){
     <!--
     e shkruva O per momentin masi simetrike 
     -->
-    <a href="Rankings.html">Rankings</a>
+    
     
     <div class="dropdown">
         <p class="dropbtn" > Search </p>
         <div class="dropdown-content" id="myDropdown">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <a href="#">Events</a>
+            <a href="#">Fighters</a>
+            <a href="#">Rankings</a>
           </div>
         </div>
-        <i id="theme-toggle">☾</i>
+        <div id='darkbutoni'>
+        <i id="theme-toggle">☾</i> <i id="theme-toggle-dark">☼</i> </div>
         <a href="Login.html">Log In</a>
         
     </div> 
@@ -72,14 +73,59 @@ return setHtmlCode;
 document.querySelector('footer').innerHTML=generateFooter()
 
 // Get the theme toggle button element
-const themeToggle = document.getElementById('theme-toggle');
+const themeToggle = document.getElementById('darkbutoni');
 
 // Function to toggle the dark theme
 function toggleDarkTheme() {
   document.body.classList.toggle('dark-theme');
-  document.getElementById('theme-toggle').innerText='☼';
-  
 }
 
 // Event listener for the theme toggle button
 themeToggle.addEventListener('click', toggleDarkTheme);
+
+
+
+const wrap=document.getElementById('maini');
+const LoginLink=document.getElementById('Login-link');
+const RegistLink=document.getElementById('Regist-link');
+
+
+RegistLink.addEventListener('click',()=>{
+    wrap.classList.add('active');
+});
+LoginLink.addEventListener('click',()=>{
+    wrap.classList.remove('active');
+});
+
+
+function validateReg() {
+    var username=document.getElementById('user').value;
+    var email = document.getElementById('emailReg').value;
+    var password = document.getElementById('passwordReg').value;
+    var error = document.getElementById('errorReg');
+    var valid = document.getElementById('validReg');
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var passRegex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    var usernameRegex=/^[a-zA-Z0-9_-]{3,16}$/;
+
+    if (email === "" || password === "" || username === "") {
+        error.textContent = "Please fill in all fields.";
+    } else if (!emailRegex.test(email)) {
+        error.textContent = "Please enter a valid email address.";
+    }/*else if(username in databaz){         mas databazes
+        error.textContent = "username Already taken";
+    } /*/
+    else if (!usernameRegex.test(username)){
+        error.textContent = "Username should only contain letters underscore or hyphen and be 3-16 charachters long";
+
+    }
+    else if (!passRegex.test(password) ){
+        error.textContent = "Password must be over 8 charachter and contain numbers,lower case and upper case letters";
+    }
+    else {
+        error.textContent = "";
+        setTimeout(function() {
+            valid.textContent = "Register successful!";
+        }, 100);
+    }
+}

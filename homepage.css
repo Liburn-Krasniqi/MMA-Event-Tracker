@@ -1,29 +1,38 @@
 .UpcomingEvents{
-    background-color: #140505;
+    background-color: var(--ezez);
     display: flex;
     width: 30%;
-    color: aliceblue;
+    color: var(--bardh);
     margin: 10px;
     padding: 10px;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
+    border-radius: 20px;
+    
 
 }
 .UpcomingEvents>h2{
     display: flex;
     justify-content: center;
-    color: gold;
+    color: rgb(224, 191, 0);
     width: 100%;
+    align-items: center;
+    height: 70px;
 }
 .EventPreview{
-    background-color: blueviolet;
     justify-content: baseline;
     display: flex;
     text-align: center;
     flex-wrap: wrap;
+    border-bottom: 2px solid ;
+    border-color: var(--bardh);
 }
+.EventPreview:last-of-type {
+    border-bottom: none; 
+  }
 .EventPreview p {
-    background-color: coral;
+    
     width: 100%;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -31,11 +40,103 @@
     text-align: center;
     padding: 5px;
 }
-#main{
+.EventPreview p:nth-child(2){
     font-size:larger;
     font-family:serif;
 }
+
+.EventPreview p:nth-child(4){
+    font-size:smaller;
+    font-family:serif;
+    
+}
+
 .EventPreview p:first-child{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-variant: small-caps;
+    font-size: larger;
+    
+}
+main{
+    display: flex;
+
+}
+
+.Event{
+    position: relative;
+    display: flex;
+    width: 67%;
+    margin-right: 5px;
+    align-items: stretch;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 5px;
+    
+}
+.fight{
+    display: flex;
+    width: 100%;
+    background-color:var(--ezez);
+    border-radius: 15px;
+    color: var(--bardh);
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+    
+}
+.name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.name b {
+    display: block;
+}
+
+.Fleft{
+    justify-content: end;
+    align-items: flex-end;
+}
+.fighter{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    
+
+}
+.weightDiv{
+    align-items:flex-start ;
+    width: 20%;
+    
+}
+.fighter img{
+    border-radius: 35px;
+}
+.desc{
+    display: flex;
+    display: none;      
+    background:var(--ezez);
+    padding: 10px; 
+    width: 100%;
+    justify-content: center;
+}
+.desc p {
+    display: flex;
+    justify-content: end;
+    margin-top: 25px;
+    margin-right: 35px;
+}
+.Fright .desc p {
+    display: flex;
+    justify-content: start;
+    margin-left: 35px;
+}
+.fight:hover .desc{
+    display: block;
+    
 }

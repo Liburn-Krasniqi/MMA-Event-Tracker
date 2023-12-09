@@ -13,8 +13,8 @@
     <header>
     </header> 
 
-    <main>
-        <div id="login-container">
+    <main id="maini">
+        <div id="login-container" class="form">
             <div id="error"></div><div id="valid"></div>
             <h1>Please Login</h1>
             <form id="loginForm" action="/" method="GET">
@@ -30,7 +30,35 @@
     
                 <button class="btn" type="button" onclick="validateForm()">Login</button>
     
-                <p>Don't have an account? <a href="#">Register.</a></p>
+                <p>Don't have an account? <a href="#" id="Regist-link">Register.</a></p>
+            </form>
+        </div>
+        <div id="register-container" class="form">
+            <div id="errorReg"></div><div id="validReg"></div>
+            <h1>Please Register</h1>
+            <form id="loginForm" action="/" method="GET">
+                <div class="form-control">
+                    <input id="user" name="user" type="text" required>
+                    <label for="text">Username</label>
+                </div>
+                <div class="form-control">
+                    <input id="emailReg" name="email" type="text" required>
+                    <label for="email">Email</label>
+                </div>
+                
+                <div class="form-control">
+                    <input id="passwordReg" name="password" type="password" required>
+                    <label for="Password">Password</label>
+                </div>
+                <div class="ToS">
+                    <label ><input  type="checkbox">Agree to the terms 
+                    of service</label>
+
+                </div>
+    
+                <button class="btn" type="button" onclick="validateReg()">Register</button>
+    
+                <p>Already have an account? <a href="#" id="Login-link">Log in.</a></p>
             </form>
         </div>
     </main>

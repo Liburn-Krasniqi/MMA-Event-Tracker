@@ -19,20 +19,30 @@ labels.forEach(label => {
 /* Scroll Buttoni */
 const backToTopButton = document.querySelector('#back-to-top-btn');
 
+// qikjo e mundson me punu heren e par qysh duhet (e kom vjedh)
+document.addEventListener("DOMContentLoaded", function () {
+    scrollFunction();
+});
+
 window.addEventListener("scroll", scrollFunction);
 
-function scrollFunction(){
-    if(window.scrollY > 300){
-        if(!backToTopButton.classList.contains("btnEntrance")){
+function scrollFunction() {
+    console.log("Scroll position:", window.scrollY); //per me debug o qikjo
+
+    if (window.scrollY > 300) {
+        if (!backToTopButton.classList.contains("btnEntrance")) {
+            console.log("Adding btnEntrance class"); //per me debug o qikjo
             backToTopButton.classList.remove("btnExit");
             backToTopButton.classList.add("btnEntrance");
             backToTopButton.style.display = "block";
         }
-    }else{
-        if(!backToTopButton.classList.contains("btnExit")){
-            backToTopButton.classList.remove("btnEntrance")
+    } else {
+        if (!backToTopButton.classList.contains("btnExit")) {
+            console.log("Adding btnExit class");
+            backToTopButton.classList.remove("btnEntrance");
             backToTopButton.classList.add("btnExit");
-            setTimeout(function() {
+            setTimeout(function () {
+                console.log("Hiding button"); //per me debug o qikjo
                 backToTopButton.style.display = "none";
             }, 250);
         }
@@ -41,12 +51,14 @@ function scrollFunction(){
 
 backToTopButton.addEventListener("click", backToTop);
 
-function backToTop(){
+function backToTop() {
+    console.log("Scrolling back to top"); // per me debug o qikjo
     window.scrollTo({
-        top:0,
+        top: 0,
         behavior: 'smooth'
     });
 }
+
 
 //shko te filan veni (dmth te FAQ) [ish kon mir me dit me bo ma general qit funksion]
 function scrollToTarget() {

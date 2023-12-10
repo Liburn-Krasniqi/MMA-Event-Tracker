@@ -1,18 +1,13 @@
-
 main{
-  
   padding:30px 10px 10px 10px;
 }
 
 .aboutUs-Container{
-  padding: 25px 50px 75px 100px;
-
-
-    border-radius: 10px;
-    background-color: var(--ezez);
-    color: var(--bardh);
-
-    box-shadow: 10px 10px 30px -5px black;
+ padding: 25px 50px 75px 100px;
+  border-radius: 10px;
+  background-color: var(--ezez);
+  color: var(--bardh);
+  box-shadow: 10px 10px 30px -5px black;
 }
 
 .aboutUs-Container:not(:first-child){
@@ -20,11 +15,10 @@ main{
 }
 
 #About-title-cards{
-    margin-top: 15px;
-    padding: 10px 0px 0px 20px;
-
-    font-size: xx-large;
-    color: white;
+  margin-top: 15px;
+  padding: 10px 0px 0px 20px;
+  font-size: xx-large;
+  color: white;
 }
 
 .faq-container{
@@ -37,150 +31,94 @@ main{
 }
 
 .faq {
-    background-color: transparent;
-    box-shadow: 10px 10px 30px -8px black;
-    text-shadow: 0px 0px 15px rgb(127, 31, 31);
-    color: white;
-    border-radius: 10px;
-    margin: 20px 0;
-    padding: 30px;
-    position: relative;
-    overflow: hidden;
-    transition: 0.4s ease;
-  }
+  background-color: transparent;
+  box-shadow: 10px 10px 30px -8px black;
+  text-shadow: 0px 0px 15px rgb(127, 31, 31);
+  color: white;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
   
-  .faq.active {
-    text-shadow:none;
-    color: var(--bardh);
-    background-color: var(--ezez);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
-  }
+.faq.active {
+  text-shadow:none;
+  color: var(--bardh);
+  background-color: var(--ezez);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
   
-  .faq.active::before,
-  .faq.active::after {
-    content: '\f075';
-    font-family: 'Font Awesome 5 Free';
-    color: #ccaf2e;
-    font-size: 7rem;
-    position: absolute;
-    opacity: 0.2;
-    top: 20px;
-    left: 20px;
-    z-index: 0;
-  }
+.faq.active::before,
+.faq.active::after {
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  color: #ccaf2e;
+  font-size: 7rem;
+  position: absolute;
+  opacity: 0.2;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+}
   
-  .faq.active::before {
-    color: #db3450;
-    top: -10px;
-    left: -30px;
-    transform: rotateY(180deg);
-  }
+.faq.active::before {
+  color: #db3450;
+  top: -10px;
+  left: -30px;
+  transform: rotateY(180deg);
+}
   
-  .faq-title {
-    margin: 0 35px 0 0;
-  }
+.faq-title {
+  margin: 0 35px 0 0;
+}
   
-  .faq-text {
-    display: none;
-    margin: 30px 0 0;
-  }
+.faq-text {
+  display: none;
+  margin: 30px 0 0;
+}
+
+.faq.active .faq-text {
+  display: block;
+}
+
+.faq-toggle {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.faq-toggle:focus {
+  outline: 0;
+}
   
-  .faq.active .faq-text {
-    display: block;
-  }
+.faq-toggle .fa-times {
+  color: var(--ezez);
+  display: none;
+}
+
+.faq.active .faq-toggle .fa-times {
+  display: block;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+background-color: #9fa4a8;
+}
   
-  .faq-toggle {
-    background-color: transparent;
-    border: 0;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    padding: 0;
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    height: 30px;
-    width: 30px;
-  }
-  
-  .faq-toggle:focus {
-    outline: 0;
-  }
-  
-  .faq-toggle .fa-times {
-    color: var(--ezez);
-    display: none;
-  }
-  
-  .faq.active .faq-toggle .fa-times {
-    display: block;
-  }
-  
-  .faq.active .faq-toggle .fa-chevron-down {
-    display: none;
-  }
-  
-  .faq.active .faq-toggle {
-  background-color: #9fa4a8;
-  }
-  
- #back-to-top-btn {
-   display: none;
-   position: fixed;
-   bottom: 20px;
-   right: 20px;
-   font-size: 26px;
-   width: 50px;
-   height: 50px;
-   background-color: rgba(255, 255, 255, 0.4);
-   color: #9fa4a8;
-   cursor: pointer;
-   outline: none;
-   border: 2px solid #9fa4a8;
-   border-radius: 50%;
-   transition-duration: 0.2s;
-   transition-timing-function: ease-in-out;
-   transition-property: background-color, color;
- }
  
- #back-to-top-btn:hover, #back-to-top-btn:active{
-   background-color: #9fa4a8b7;
-   color: rgba(255, 255, 255, 0.504);
- }
- 
- /*animaCionEt wowowo*/
- .btnEntrance{
-   animation-duration: 0.5s;
-   animation-fill-mode: both;
-   animation-name: btnEntrance;
- }
- 
- /* zoomIn */
- @keyframes btnEntrance {
-   from {
-     opacity: 0;
-     transform: scale3d(0.3, 0.3, 0.3);
-   }
-   to {
-     opacity: 1;
-   } 
- }
- .btnExit {
-   animation-duration: 0.25s;
-   animation-fill-mode: both;
-   animation-name: btnExit;
-   opacity: 1;
- }
- /* ZoomOut */
- @keyframes btnExit {
-  from {
-   opacity: 1;
-  }
-  to {
-   opacity: 0;
-   transform: scale3d(0.3, 0.3, 0.3);
-  }
- }

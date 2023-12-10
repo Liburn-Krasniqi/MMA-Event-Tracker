@@ -8,8 +8,8 @@ main{
     
     
     
-    margin-left: 32%;
-    margin-right: 32%;
+    margin-left: 35%;
+    margin-right: 35%;
     margin-bottom: 70px;
     
 }
@@ -17,7 +17,7 @@ main{
 
 
 main.active{
-    height: 520px;
+    height: 550px;
 }
 main.active #login-container{
     transition: transform .48s ease;
@@ -36,7 +36,7 @@ main #login-container{
     background-color: var(--ezez);
     padding: 20px 40px;
     width: 100%;
-    box-shadow: 10px 10px 30px -5px black;
+    box-shadow: 5px 5px 10px -5px black;
     color: var(--bardh);
     
     
@@ -155,12 +155,12 @@ main.active #register-container{
 
 @media only screen and (max-width: 768px) {
     main{
-        width: 70%;
-        margin-left: 13%;
-        margin-right: 13%;
+        width: 90%;
+        margin-left: 4%;
+        margin-right: 4%;
         
     }
-    #register-container{
-        height: 500px;
+    main.active{
+        height: 600px;
     }
   }

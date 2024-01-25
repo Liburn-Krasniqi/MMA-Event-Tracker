@@ -17,7 +17,7 @@ function generateHeader(){
         <div class="dropdown-content" id="myDropdown">
             <a href="#">Events</a>
             <a href="#">Fighters</a>
-            <a href="#">Rankings</a>
+            <a href="Rankings.html">Rankings</a>
           </div>
         </div>
         <div id='darkbutoni'>

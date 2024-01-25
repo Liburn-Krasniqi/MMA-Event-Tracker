@@ -92,3 +92,13 @@ function validateForm() {
         }, 100);
     }
 }
+
+/*Show/hide Rankings  (@media) */
+const buttonsR = document.querySelectorAll('.select-btn');
+
+buttonsR.forEach(button => {
+    button.addEventListener('click', () => {
+        const divisionRank = button.closest('.division-rank');
+        divisionRank.classList.toggle('active');
+    });
+});

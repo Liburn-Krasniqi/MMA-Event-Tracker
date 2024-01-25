@@ -1,0 +1,205 @@
+main{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+
+h1{
+    font-size: xxx-large;
+    text-shadow: 0px 0px 9px rgb(127, 31, 31);
+    color: white;
+}
+
+.divisions{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: space-evenly;
+    padding: 20px 10px;
+    min-width: 80%;
+}
+
+.division-rank{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-height: 700px;
+    width: 23%;
+    border-radius: 15px;
+    box-shadow: 10px 10px 30px -5px black;
+    margin-bottom: 15px;
+    padding: 20px 20px;
+    /* overflow: hidden; */
+}
+
+.division-rank>.rank-row{
+    display: flex;
+    flex-direction: column;
+}
+
+.division-rank>.rank-row>h5{
+    color: black;
+    align-self: center;
+}
+
+.division-rank>.rank-row>h5>span{
+    color: red;
+    align-self: center;
+}
+
+.division-rank>.rank-row>img{ 
+    max-height:102px;
+    max-width: 95%;
+    object-fit:contain;
+}
+
+.division-rank>.rank-row>hr{
+    align-self: center;
+    width: 95%;
+}
+
+.division-rank>ol{
+    width: 80%;
+    word-wrap: break-word;
+    position: relative;
+    margin-left: 25px;
+}
+
+.division-rank>ol>li{
+    font-size: 1vw;
+    margin: 2px;
+    padding-left: 2px;
+    border-radius: 3px;
+}
+
+.division-rank>ol>li:hover{
+   /* background-color: rgb(185, 185, 185); */
+   color: rgb(255, 132, 0);
+   font-weight: bold;
+   text-shadow: 0 0 20px -1px black;
+   /* box-shadow: 0 0 7px rgb(185, 185, 185); */
+   cursor: pointer;
+   transform: scale(1.03);
+}
+
+.select-btn{
+    display: none;
+}
+
+@media(max-width: 767px){
+    .divisions{
+        display: flex;
+	    flex-direction: column;
+	    flex-wrap: nowrap;
+	    justify-content: flex-start;
+	    align-items: stretch;
+	    align-content: stretch;
+        padding: 20px 10px;
+        min-width: 90%;
+    }
+
+    .division-rank{
+        display: flex;
+	    flex-direction: column;
+	    flex-wrap: nowrap;
+	    justify-content: space-around;
+	    align-items: center;
+	    align-content: stretch;
+        min-height: 100px;
+        width: 100%;
+        /* border-radius: 0px; */
+        margin-bottom: 15px;
+        padding: 20px 20px;
+        overflow: hidden; 
+    }
+
+    .division-rank>.rank-row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: flex-start;
+        width: 95%;
+        height: 90%;
+    }
+
+    .division-rank>.rank-row>h5{
+        color: black;
+        align-self: flex-start;
+        text-wrap: wrap;
+        max-width: 22%;
+        margin-top: 5px;
+    }
+
+    .division-rank>.rank-row>h5>span{
+        color: red;
+        align-self: flex-start;
+    }
+
+    .division-rank>.rank-row>h2{
+        text-align: center;
+    }
+
+    .division-rank>.rank-row>img{ 
+        position: sticky;
+        bottom: 0;
+        height:80%;
+        width: 23%;
+        object-fit: scale-down;
+        margin: 10px 5px;
+        border-radius: 5px;
+        border: solid 1px rgb(255, 132, 0);
+        box-shadow: 0 0 20px -5px rgb(127, 31, 31);
+    }
+
+    .division-rank>.rank-row>hr{
+        display: none;
+    }
+
+    .division-rank>ol{
+        display: none;
+    }
+
+    .division-rank.active>ol{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 45px;
+    }
+
+    .division-rank.active>ol>li{
+        width: 100%;
+        font-size: 2vw;
+    }
+
+    .division-rank>ol>li:hover{
+        transform: scale(1.02);
+     }
+
+    .select-btn{
+        display: block;
+        border: none;
+        background-color: white;
+        top: 30px;
+        right: 30px;
+    }
+
+    .select-btn>i{
+        font-size: 25px;
+        transition: 0.3s;
+    }
+    .division-rank.active .select-btn>i{
+        color: rgb(255, 132, 0);
+        transform: rotate(-180deg);
+    }
+}
+
+@media(max-width: 565px){
+    
+}

@@ -1,0 +1,32 @@
+.fight{
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.fight input {
+    margin-top: 10px;
+}
+.fight table , th ,td{
+    border-collapse: collapse;
+    border:1px solid goldenrod;
+}
+.fight table{
+    width: 95%;
+}
+.delete-button {
+    background-color: #ff6666;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+}
+
+.edit-button {
+    background-color: #66b3ff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+}
+td{
+    text-align: center;
+}

@@ -12,10 +12,13 @@
     
 
 }
+.UpcomingEvents>h2:first-child{
+    color: rgb(224, 191, 0);
+}
 .UpcomingEvents>h2{
     display: flex;
     justify-content: center;
-    color: rgb(224, 191, 0);
+    color: white;
     width: 100%;
     align-items: center;
     height: 70px;
@@ -140,3 +143,50 @@ main{
     display: block;
     
 }
+@media only screen and (max-width: 768px) {
+    .UpcomingEvents{
+        width: 90%;
+        margin-left: 4%;
+        margin-right: 4%;
+        
+    }
+    .Event{
+        width: 90%;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    .fight{
+        flex-direction: colum;
+        
+        justify-content: end;
+        flex-wrap: wrap;
+        height: 300x;
+        
+    }
+    .fighter{
+        width: 40%;
+        
+    }
+    .weightDiv{
+        display: none;
+    }
+    .name{
+        align-items: baseline;
+        justify-content: end;
+        
+    }
+    .name p {
+        display: none;
+    }
+    .desc p {
+        justify-content: center;
+    }
+    .Fright .desc p {
+        
+        justify-content: center;
+        margin-right: 35px;
+    }
+    main{
+        flex-wrap: wrap;
+    }
+  }

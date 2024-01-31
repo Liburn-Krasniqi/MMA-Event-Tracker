@@ -7,15 +7,14 @@
     <title>MMA-tracker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="homepage.css">
-    
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
 </head>
 
 
 <body>
-    <header> </header>
+<?php include 'heder.php' ?>
 
     <main>
         
@@ -23,9 +22,10 @@
         </div>
         <div class="UpcomingEvents">
             <h2 class="EventPreview">DashBoard</h2>
-            <h2 class="EventPreview"><a href="dashboard.html">Fighter</a> </h2>
-            <h2 class="EventPreview"><a href="EventDB.html">Event</a></h2>
-            <h2 class="EventPreview"><a href="#">News</a></h2>
+            <h2 class="EventPreview"><a href="dashboard.php">Fighter</a> </h2>
+            <h2 class="EventPreview"><a href="#">Event</a></h2>
+            <h2 class="EventPreview"><a href="NewsDB.php">News</a></h2>
+            <h2 class="EventPreview"><a href="UserDB.php">Users</a></h2>
             
     
                     </div>
@@ -36,33 +36,32 @@
                     <h2>Create Event</h2>
                     <div class="fight">
                         <form action="">
-                            <label for="name">Title:</label>
-                            <input type="text" id="title" name="title">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name">
                             
-                            <label for="description">description:</label>
-                            <input type="text" id="description" name="description" >
-                            <label for="thumbnail">Thumbnail:</label>
-                            <input type="file" id="thumbnail" name="thumbnail" ><br>
-                            <label for="author">Author:</label>
-                            <input type="text" id='author' name='author' >
+                            <label for="Company">Company:</label>
+                            <input type="text" id="company" name="company" >
+                            <label for="Location">Location:</label>
+                            <input type="text" id="location" name="location" ><br>
                             <label for="date">Date:</label>
-                            <input type="date" id="date" name="date" >
+                            <input type="datetime-local" id='date' name='date' >
+                            
                             
                             <input type="submit" value="Create">
                         </form>
                     </div>
                         <h2>Event</h2>
-                        <div class="fight">
+                        <div class="fight " style="height:auto; padding:10px;">
                             
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>NewsID</th>
-                                        <th>Title</th>
-                                        <th>description</th>
-                                        <th>Thumbnail</th>
-                                        <th>Author</th>
-                                        <th>Date</th>
+                                        <th>EventID</th>
+                                        <th>Name</th>
+                                        <th>Company</th>
+                                        <th>Location</th>
+                                        <th>date</th>
+                                        
                                         <th>Delete</th>
                                         <th>Edit</th>
                                     </tr>
@@ -70,11 +69,11 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Alex pereira dahet me fm</td>
-                                        <td>chama</td>
-                                        <td>foto</td>
-                                        <td>UFC News</td>
-                                        <td>12/10/22</td>
+                                        <td>300</td>
+                                        <td>UFC</td>
+                                        <td>New York</td>
+                                        <td>10/12/2024 9:00</td>
+                                        
                                         <td class="delete-button" onclick="deleteFighter(1)">Delete</td>
                                         <td class="edit-button" onclick="editFighter(1)">Edit</td>
                                     </tr>
@@ -93,7 +92,7 @@
    
    
     
-    <footer> </footer>
+    <?php include 'hFooter.php' ?>
      <button id="back-to-top-btn"><i class="fa-solid fa-arrow-up"></i></button>
      <script src="generate-hed-fot.js" ></script>
      <script src="app.js"></script>

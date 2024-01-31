@@ -6,12 +6,11 @@
     <title>LogIn</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="AboutMain.css">
-    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="LoginCss.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <header>
-    </header> 
+<?php include 'heder.php' ?>
 
     <main id="maini">
         <div id="login-container" class="form">
@@ -36,7 +35,7 @@
         <div id="register-container" class="form">
             <div id="errorReg"></div><div id="validReg"></div>
             <h1>Please Register</h1>
-            <form id="loginForm" action="/" method="GET">
+            <form id="loginForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
                 <div class="form-control">
                     <input id="user" name="user" type="text" required>
                     <label for="text">Username</label>
@@ -63,9 +62,9 @@
         </div>
     </main>
 
-    <footer>
-    </footer>
+    <?php include 'hFooter.php' ?>
     <script src="app.js"></script> 
     <script src="generate-hed-fot.js"></script>
+    <?php include_once '../phpincluda/ValidimiRegjister.php';?>
 </body>
 </html>

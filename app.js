@@ -102,3 +102,50 @@ buttonsR.forEach(button => {
         divisionRank.classList.toggle('active');
     });
 });
+
+//Slideri V2
+// const slider = document.querySelector(".articles");
+
+// const prev = document.querySelector("#leftButton");
+// const next = document.querySelector("#rightButton");
+
+// next.addEventListener('click', function() {
+//     slider.style.transform = 'translate(-20%)';
+// });
+
+// Slideri
+var articles = document.querySelector(".articles");
+var articlesWidth =  parseFloat(getComputedStyle(articles).width);
+var article1 = document.querySelector(".article");
+var articleWidth = parseFloat(getComputedStyle(article1).width);
+console.log(articlesWidth);
+function slideLeft() {
+    var currentMargin = parseFloat(getComputedStyle(article1).marginLeft);
+   
+    if (!isNaN(currentMargin)) {
+        article1.style.marginLeft = (currentMargin - articleWidth) + "px";
+    } else {
+        console.error("Invalid margin value:", currentMargin);
+    }
+}
+
+
+function slideRight() {
+    var currentMargin = parseFloat(getComputedStyle(article1).marginLeft);
+    console.log(currentMargin);
+    if(currentMargin>0){
+        article1.style.marginLeft = (articleWidth*3) + "px";
+    }
+    if (!isNaN(currentMargin)) {
+        article1.style.marginLeft = (currentMargin + articleWidth) + "px";
+    } else {
+        console.error("Invalid margin value:", currentMargin);
+    }
+}
+
+// articles.addEventListener('transitioned', function() {
+//     articles.appendChild(articles.firstElementChild());
+
+//     articles.style.transform = tranlate(0);
+// })
+

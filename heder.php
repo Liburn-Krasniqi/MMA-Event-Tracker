@@ -1,4 +1,19 @@
 
+<?php
+session_start();
+$show="display:none;";
+$login="Log in";
+if(isset($_SESSION['username'])) 
+     $login=$_SESSION['username'];
+if(isset($_SESSION['username']))   {
+    if($_SESSION['role'] == "admin"){
+        $show = "display:inline;";
+        
+    }
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +30,7 @@
      <a href="index.php">Home</a>
     <a href="Abouti.php">About us</a>
     <a href="News.php">News</a>
+    <a href="dashboard.php" id="db" style="<?php echo $show?>" >Dashboard</a>
 
     <a href="index.php" id="logo">FightLog</a>
     <!--
@@ -32,7 +48,7 @@
         </div>
         <div id='darkbutoni'>
         <i id="theme-toggle">☾</i> <i id="theme-toggle-dark">☼</i> </div>
-        <a href="Login.php">Log In</a>
+        <a href="Login.php"><?php echo $login?></a>
         
     </div> 
     </header>

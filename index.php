@@ -10,7 +10,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-<?php include 'heder.php' ?>
+<?php include 'heder.php' ;
+    include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\usera.php';
+?>
 
     <main>
         
@@ -18,7 +20,22 @@
         </div>
         <div class="UpcomingEvents">
             <h2 class="EventPreview">UpcomingEvents</h2>
-            <article class="EventPreview" id="event1" >
+            <?php       
+                                $db=new Userdb;
+                                $eventet=$db->getAllEvents();
+                                foreach ($eventet as $event){
+                                    echo  "
+                                    <article class='EventPreview'  >
+                                        <p>$event[1]</p>
+                                    <p class='mainF_Table'>$event[4]</p>
+                                    <p>$event[3]</p>
+                                    <p>$event[2]</p>
+                                </article>
+                                    ";
+                                }
+                                ?>
+
+            <!-- <article class="EventPreview" id="event1" >
                 <p>UFC296</p>
                 <p class="mainF_Table">Colby Covington vs Leon Edwards</p>
                  <p>December, 13th, 2024 </p>
@@ -37,7 +54,7 @@
                 <p class="mainF_Table">Colby Covington vs Leon Edwards</p>
                  <p>December, 13th, 2024</p>
                  <p>New york</p>
-            </article>
+            </article> -->
         </div>
         
             <div class="Event">

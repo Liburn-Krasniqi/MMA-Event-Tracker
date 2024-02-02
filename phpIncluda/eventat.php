@@ -1,37 +1,43 @@
 <?php
 
-class User{
+class Events{
 
-    private $username;
-    private $email;
-    private $password;
-    private $role;
+    private $id;
+    private $name;
+    private $location;
+    private $dita;
+    private $mainf;
 
 
-    function __construct($username,$email,$password,$role){
+    function __construct($id,$name,$location,$dita,$mainf){
            
             
-            $this->email = $email;
-            $this->username = $username;
-            $this->password = $password;
-            $this->role=$role;
+            $this->id = $id;
+            $this->name = $name;
+            $this->location = $location;
+            $this->dita=$dita;
+            $this->mainf=$mainf;
     }
     
 
-    function getEmail(){
-        return $this->email;
+    function getId(){
+        return $this->id;
     }
-    function getUsername(){
-        return $this->username;
+    function getName(){
+        return $this->name;
     }
-    function getPassword(){
-        return $this->password;
+    function getLocation(){
+        return $this->location;
     }
-    function getRole(){
-        return $this->role;
+    function getDita(){
+        return $this->dita;
     }
+    function getMainf(){
+        return $this->mainf;
+    }
+
 }
-include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\Databaza.php';
+include_once 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\Databaza.php';
 
 class Userdb{
     private $connection;
@@ -135,26 +141,10 @@ class Userdb{
     echo "<script>alert('change to admin was successful'); </script>";
 
 }
-//per evente
-function getAllEvents(){
-    $conn = $this->connection;
-
-    $sql = "SELECT * FROM events";
-
-    $statement = $conn->query($sql);
-    $events = $statement->fetchAll();
-
-    return $events;
-}
 
 }
 
  $usera=new Userdb;
- $eventet=$usera->getAllEvents();
- foreach($eventet as $eventi){
-     echo $eventi[2];
-
- }
  echo sizeof($usera->getAllUsers());
 // $redol=$usera->getUserByUsername("Redol");
 // $useri=$usera->getUserByUsername("charlie333");

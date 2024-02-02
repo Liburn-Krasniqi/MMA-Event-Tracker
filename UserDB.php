@@ -49,8 +49,9 @@
                                         <th>Username</th>
                                         <th>Email</th>
                                         <th>role</th>
-                                        <th>MakeAdmin</th>
                                         <th>RemoveAdmin</th>
+                                        <th>MakeAdmin</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -93,19 +94,7 @@
      <button id="back-to-top-btn"><i class="fa-solid fa-arrow-up"></i></button>
      <script src="generate-hed-fot.js" ></script>
      <script src="app.js"></script>
-     <script>
-         console.log(removeAdm);
-        function removeAdm(Id) {
-            <?php
-                $usera->makeAdmin(Id);
-                ?>
-        }
-
-        function editFighter(fighterId) {
-            // Add logic to edit the fighter with the given ID
-            console.log('Edit Fighter with ID:', fighterId);}
-
-     </script>
+     
 
      <body> 
      <html>

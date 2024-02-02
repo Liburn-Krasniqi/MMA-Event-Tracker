@@ -16,22 +16,25 @@
         <div id="login-container" class="form">
             <div id="error"></div><div id="valid"></div>
             <h1>Please Login</h1>
-            <form id="loginForm" action="/" method="GET">
+            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
                 <div class="form-control">
-                    <input id="email" name="email" type="text" required>
-                    <label for="email">Email</label>
+                    <input id="username" name="username" type="text" required>
+                    <label for="username">Username</label>
                 </div>
                 
+                
                 <div class="form-control">
-                    <input id="password" name="password" type="password" required>
+                    <input id="password" name="pass" type="password" required>
                     <label for="Password">Password</label>
                 </div>
-    
-                <button class="btn" type="button" onclick="validateForm()">Login</button>
-    
+
+                <input type="submit" name="loginBtn" value="Login" class="btn" onclick="validateForm()">
+                
+
                 <p>Don't have an account? <a href="#" id="Regist-link">Register.</a></p>
             </form>
         </div>
+        
         <div id="register-container" class="form">
             <div id="errorReg"></div><div id="validReg"></div>
             <h1>Please Register</h1>
@@ -54,8 +57,8 @@
                     of service</label>
 
                 </div>
-    
-                <button class="btn" type="button" onclick="validateReg()">Register</button>
+                <input type="submit" name="registerBtn" value="Register" class="btn" onclick="validateReg()">
+                
     
                 <p>Already have an account? <a href="#" id="Login-link">Log in.</a></p>
             </form>
@@ -65,6 +68,8 @@
     <?php include 'hFooter.php' ?>
     <script src="app.js"></script> 
     <script src="generate-hed-fot.js"></script>
-    <?php include_once '../phpincluda/ValidimiRegjister.php';?>
+    <?php include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\ValidimiRegjister.php';
+    include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\validimiLogin.php';
+    ?>
 </body>
 </html>

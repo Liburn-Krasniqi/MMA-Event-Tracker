@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <header> </header> 
+<?php include 'heder.php' ?>
 
     <main>
         <div class="aboutUs-Container">
@@ -96,11 +96,12 @@
         
     </main>
 
-    <footer> </footer>
+    <?php include 'hFooter.php' ?>
     <button id="back-to-top-btn"><i class="fa-solid fa-arrow-up"></i></button>
     <script src="app.js"></script> 
     <script src="generate-hed-fot.js" >
 
     </script>
+    
 </body>
 </html>

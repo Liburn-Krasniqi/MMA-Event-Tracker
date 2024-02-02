@@ -1,16 +1,17 @@
 <?php
 
 
-echo "<script>alert('validumefillim11');</script>";
+
 if(isset($_POST['loginBtn'])){
     
-    echo "<script>alert('validume1111');</script>";
+    
     
     $username = $_POST['username'];
     $password = $_POST['pass'];
-
-    include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\usera.php';
+    
+    include_once 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\usera.php';
     $i=0;
+    
     
     $users= new Userdb();
     $usera=$users->getAllUsers();
@@ -18,6 +19,7 @@ if(isset($_POST['loginBtn'])){
     
     
     foreach($usera as $user){
+      
       if($user[0] == $username && $user[2] == $password){
         session_start();
   
@@ -25,8 +27,8 @@ if(isset($_POST['loginBtn'])){
         $_SESSION['pass'] = $user[2];
         $_SESSION['role'] = $user[3];
         $_SESSION['loginTime'] = date("H:i:s");
-        echo "<script>alert('validume');</script>";
-        header("location:usera.php");
+        
+        header("location:C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\index.php");
         exit();
       }else{
         $i++;

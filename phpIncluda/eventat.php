@@ -38,125 +38,77 @@ class Events{
 
 }
 include_once 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\Databaza.php';
+include_once 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\usera.php';
 
-class Userdb{
+class Eventdb {
     private $connection;
 
     function __construct(){
         $conn = new DatabaseConenction;
         $this->connection = $conn->startConnection();
     }
-
-
-    function insertUser($user){
-
+    function getAllEvents(){
+        $conn = $this->connection;
+    
+        $sql = "SELECT * FROM events";
+    
+        $statement = $conn->query($sql);
+        $events = $statement->fetchAll();
+    
+        return $events;
+    }
+    function deleteEvent($id){
         $conn = $this->connection;
 
-        
-        $email = $user->getEmail();
-        $username = $user->getUsername();
-        $password = $user->getPassword();
-        $role=$user->getRole();
-
-        $sql = "INSERT INTO users (username,email,password,role) VALUES (?,?,?,?)";
+        $sql = "DELETE FROM events WHERE eventId=?";
 
         $statement = $conn->prepare($sql);
 
-        $statement->execute([$username,$email,$password,$role]);
-
-        echo "<script> alert('User has been inserted successfuly!'); </script>";
-
-    }
-
-    function getAllUsers(){
-        $conn = $this->connection;
-
-        $sql = "SELECT * FROM users";
-
-        $statement = $conn->query($sql);
-        $users = $statement->fetchAll();
-
-        return $users;
-    }
-
-    function getUserByUsername($username){
-        $conn = $this->connection;
-
-        $sql = "SELECT * FROM users WHERE username='$username'";
-
-        $statement = $conn->query($sql);
-        $user = $statement->fetch();
-
-        return $user;
-    }
-
-    // function updateUser($id,$name,$surname,$email,$username,$password){
-    //      $conn = $this->connection;
-
-    //      $sql = "UPDATE user SET name=?, surname=?, email=?, username=?, password=? WHERE id=?";
-
-    //      $statement = $conn->prepare($sql);
-
-    //      $statement->execute([$name,$surname,$email,$username,$password,$id]);
-
-    //      echo "<script>alert('update was successful'); </script>";
-    // } 
-
-    function deleteUser($username){
-        $conn = $this->connection;
-
-        $sql = "DELETE FROM users WHERE username=?";
-
-        $statement = $conn->prepare($sql);
-
-        $statement->execute([$username]);
+        $statement->execute([$id]);
 
         echo "<script>alert('delete was successful'); </script>";
-   } 
-   function makeAdmin($username){
-        $conn = $this->connection;
-
-        $sql = "UPDATE users  
-        SET role = 'admin'
-        WHERE username = ?";
-
-        $statement = $conn->prepare($sql);
-
-        $statement->execute([$username]);
-
-        echo "<script>alert('change to admin was successful'); </script>";
-
    }
-   function removeAdmin($username){
+   function insertEvent($event){
+
     $conn = $this->connection;
 
-    $sql = "UPDATE users  
-    SET role = 'user'
-    WHERE username = ?";
+    
+    $name = $event->getName();
+    $location = $event->getLocation();
+    $dita = $event->getDita();
+    $mainf=$event->getMainf();
+
+    $sql = "INSERT INTO events (name,dita,location,mainF) VALUES (?,?,?,?)";
 
     $statement = $conn->prepare($sql);
 
-    $statement->execute([$username]);
+    $statement->execute([$name,$dita,$location,$mainf]);
 
-    echo "<script>alert('change to admin was successful'); </script>";
+    echo "<script> alert('User has been inserted successfuly!'); </script>";
 
+}
+    function getFights($id){
+        $conn = $this->connection;
+
+        $sql = "SELECT * FROM fights WHERE eventId='$id'";
+
+        $statement = $conn->query($sql);
+        $fights = $statement->fetchAll();
+
+        return $fights;
 }
 
 }
-
- $usera=new Userdb;
- echo sizeof($usera->getAllUsers());
-// $redol=$usera->getUserByUsername("Redol");
-// $useri=$usera->getUserByUsername("charlie333");
-// echo $useri[3] .'<br/>';
-
-
-// echo $useri[3] .'<br/>';
-// $red=new User('Redon','redon42','dasda','user');
-
-// $usera->insertUser($red);
-$userat=$usera->getAllUsers();
-foreach ($userat as $user){
-    echo $user[0].' '. $user[1].' '. $user[2].' '. $user[3]. '<br/>';
-}
+            // $event=new Eventdb();
+            //  $fights=$event->getFights(1);
+             
+            //  foreach($fights as $f){
+            //     echo '--------------'. '<br>';
+            //      echo $f[0] . '<br>'
+            //      .$f[1] . '<br>'.$f[2] . '<br>'.$f[3] . '<br>'.$f[4] . '<br>'
+            //      .$f[5] . '<br>'.$f[6] . '<br>'.$f[7] . '<br>'.$f[8] . '<br>'
+            //      .$f[9] . '<br>'.$f[10] . '<br>'.$f[11] . '<br>'.$f[12] . '<br>'
+                 
+            //      ;
+            //  }
 ?>

@@ -28,7 +28,7 @@ if(isset($_POST['loginBtn'])){
         $_SESSION['role'] = $user[3];
         $_SESSION['loginTime'] = date("H:i:s");
         
-        header("location:C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\index.php");
+        header("Location: ../index.php");
         exit();
       }else{
         $i++;

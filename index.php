@@ -11,27 +11,30 @@
 </head>
 <body>
 <?php include 'heder.php' ;
-    include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\usera.php';
+    include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\eventat.php';
 ?>
 
     <main>
         
 
-        </div>
+        
         <div class="UpcomingEvents">
             <h2 class="EventPreview">UpcomingEvents</h2>
             <?php       
-                                $db=new Userdb;
+                                $db=new Eventdb;
                                 $eventet=$db->getAllEvents();
+                                $id=1;
                                 foreach ($eventet as $event){
                                     echo  "
-                                    <article class='EventPreview'  >
+                                    <article class='EventPreview' id=\"event$id\" >
                                         <p>$event[1]</p>
                                     <p class='mainF_Table'>$event[4]</p>
                                     <p>$event[3]</p>
                                     <p>$event[2]</p>
                                 </article>
-                                    ";
+                                   
+                                ";
+                                    $id++;
                                 }
                                 ?>
 
@@ -92,6 +95,52 @@
                     
     
                 </div>
+                <?php
+                $event=new Eventdb();
+                $fights=$event->getFights(1);
+                echo $fights[0][12];
+                
+                foreach($fights as $f){
+                    
+                     echo `<div class="fight">
+                     <div class="fighter Fleft">
+                         <div class="name">
+                             <b>$f[3]</b> 
+                             <p>Record</p>
+                             <img src="$f[11]" alt="Jon jones">
+                         </div>
+                         
+                         <div class="desc fighter">
+                             <p>Height:$f[4]</p>
+                             <p>Weight:$f[5]</p>
+                             <p>Reach:$f[6]</p>
+                         </div>
+                     </div>
+                     <p class="weightDiv fighter">$f[2]</p>
+                     <div class="fighter Fright">
+                     
+                         <div class="name">
+                             <img src="$$f[12]" alt="Jon jones">
+                             <b>$f[7]</b> 
+                             <p>Record</p>
+                            
+                         </div>
+                         <div class="desc fighter">
+                             <p>Height:$f[8]</p>
+                             <p>Weight:$f[9]</p>
+                             <p>Reach:$f[10]</p>
+                         </div>
+     
+                     </div>
+                     
+                     
+     
+                 </div>
+                 ` 
+                     
+                     ;
+                 }
+                ?>
                 <div class="fight">
                     <div class="fighter Fleft">
                         <div class="name">
@@ -150,14 +199,30 @@
         function displayEvent(e) {
             //console.log(e.target);
         var eventID = e.target.closest('article').id;
+        alert(eventID);
         //console.log(e.target.closest('article').id);
         var fighti =document.querySelector('.Event');
         fighti.innerHTML='';
         
          if(eventID === 'event1') {
              console.log('epara');
+
+             <?php
+             $event=new Eventdb();
+             $fights=$event->getFights(1);
+             $fightsa=[];
+             foreach($fights as $fight){
+                 $fights[]=$fight;
+             }
+             $json = json_encode($fightsa);
              
-            addFight(fighteri1,fighteri2,'hw');
+             ?>
+            var fights=<?php echo"$json"; ?>;
+            fights.foreach(function(f){
+                addFight(f[2],f[3],f[4],f[5],f[6],f[7],f[8],f[9],f[10],f[11],f[12],f[13]);
+
+            });
+            addFight(fightsa,fighteri2,'hw');
             addFight(fighteri1,fighteri2,'hw');
             
          } else if(eventID === 'event2') {   
@@ -171,36 +236,37 @@
             addFight(fighteri1,fighteri2,'hw');
             }
            
-}          function addFight(fighter1,fighter2,weight){
+}          function addFight(weightdiv,f1name,f1height,f1weight,f1reach
+                f2name,f2height,f2weight,f2reach,f1img,f2img){
                 var fighti =document.querySelector('.Event');
      
                 fighti.innerHTML+=`<div class="fight">
                     <div class="fighter Fleft">
                         <div class="name">
-                            <b>${fighter1[0]}</b> 
-                            <p>${fighter1[1]}</p>
-                            <img src="AlexP.jfif" alt="Jon jones">
+                            <b>${f1name}</b> 
+                            <p>Record</p>
+                            <img src="${f1img}" alt="Jon jones">
                         </div>
                         
                         <div class="desc fighter">
-                            <p>Height:${fighter1[2]}</p>
-                            <p>Weight:${fighter1[3]}</p>
-                            <p>Reach:${fighter1[4]}</p>
+                            <p>Height:${f1height}</p>
+                            <p>Weight:${f1weight}</p>
+                            <p>Reach:${f1reach}</p>
                         </div>
                     </div>
-                    <p class="weightDiv fighter">${weight}</p>
+                    <p class="weightDiv fighter">${weightdiv}</p>
                     <div class="fighter Fright">
                     
                         <div class="name">
-                            <img src="AlexP.jfif" alt="Jon jones">
-                            <b>${fighter2[0]}</b> 
-                            <p>${fighter2[1]}</p>
+                            <img src="${f2img}" alt="Jon jones">
+                            <b>${f2name}</b> 
+                            <p>Record</p>
                            
                         </div>
                         <div class="desc fighter">
-                            <p>Height:${fighter2[2]}</p>
-                            <p>Weight:${fighter2[3]}</p>
-                            <p>Reach:${fighter2[4]}</p>
+                            <p>Height:${f2height}</p>
+                            <p>Weight:${f2weight}</p>
+                            <p>Reach:${f2reach}</p>
                         </div>
     
                     </div>

@@ -14,7 +14,9 @@
 
 
 <body>
-<?php include 'heder.php' ?>
+<?php include 'heder.php';
+        include_once 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\eventat.php';
+?>
 
     <main>
         
@@ -35,19 +37,18 @@
                 <div class="Event">
                     <h2>Create Event</h2>
                     <div class="fight">
-                        <form action="">
+                        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method='post'>
                             <label for="name">Name:</label>
-                            <input type="text" id="name" name="name">
-                            
-                            <label for="Company">Company:</label>
-                            <input type="text" id="company" name="company" >
+                            <input type="text" id="name" name="name" required>
                             <label for="Location">Location:</label>
-                            <input type="text" id="location" name="location" ><br>
+                            <input type="text" id="location" name="location" required><br>
                             <label for="date">Date:</label>
-                            <input type="datetime-local" id='date' name='date' >
+                            <input type="date" id='date' name='dita' required>
+                            <label for="mainf">Main Fight:</label>
+                            <input type="text" id='mainf' name='mainf' required>
                             
                             
-                            <input type="submit" value="Create">
+                            <input type="submit" name='creatE' value="Create">
                         </form>
                     </div>
                         <h2>Event</h2>
@@ -58,26 +59,39 @@
                                     <tr>
                                         <th>EventID</th>
                                         <th>Name</th>
-                                        <th>Company</th>
+                                        
                                         <th>Location</th>
                                         <th>date</th>
+                                        <th>Main Fight</th>
                                         
                                         <th>Delete</th>
                                         <th>Edit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>300</td>
-                                        <td>UFC</td>
-                                        <td>New York</td>
-                                        <td>10/12/2024 9:00</td>
-                                        
-                                        <td class="delete-button" onclick="deleteFighter(1)">Delete</td>
-                                        <td class="edit-button" onclick="editFighter(1)">Edit</td>
-                                    </tr>
-                                    <!-- Add more rows as needed -->
+                                <?php       
+                                $event=new Eventdb;
+                                $eventa=$event->getAllEvents();
+                                foreach ($eventa as $event){
+                                    echo "
+                                <tr>
+                                    
+                                    <td>$event[0]</td>
+                                    <td>$event[1]</td>
+                                    
+                                    <td>$event[2]</td>
+                                    <td>$event[3]</td>
+                                    <td>$event[4]</td>
+                                    
+                                    
+                                    <td class='delete-button' ><a href='rdelEvent.php?id=$event[0]'>Delete Event</a></td>
+                                    <td class='edit-button'>Edit</td>
+                                </tr>
+                                    
+                                    ";
+                                }
+                                ?>
+                                   
                                 </tbody>
                             </table>
                         </div>
@@ -96,17 +110,10 @@
      <button id="back-to-top-btn"><i class="fa-solid fa-arrow-up"></i></button>
      <script src="generate-hed-fot.js" ></script>
      <script src="app.js"></script>
-     <script>
-         function deleteFighter(fighterId) {
-            // Add logic to delete the fighter with the given ID
-            console.log('Delete Fighter with ID:', fighterId);
-        }
-
-        function editFighter(fighterId) {
-            // Add logic to edit the fighter with the given ID
-            console.log('Edit Fighter with ID:', fighterId);}
-
-     </script>
+     
+     <?php 
+    include_once 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\rinsertEvent.php';
+    ?>
 
      <body> 
      <html>

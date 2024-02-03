@@ -31,7 +31,7 @@ class User{
         return $this->role;
     }
 }
-include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\Databaza.php';
+include_once 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\Databaza.php';
 
 class Userdb{
     private $connection;
@@ -134,28 +134,10 @@ class Userdb{
 
     echo "<script>alert('change to admin was successful'); </script>";
 
-}
-//per evente
-function getAllEvents(){
-    $conn = $this->connection;
+}}
 
-    $sql = "SELECT * FROM events";
-
-    $statement = $conn->query($sql);
-    $events = $statement->fetchAll();
-
-    return $events;
-}
-
-}
-
- $usera=new Userdb;
- $eventet=$usera->getAllEvents();
- foreach($eventet as $eventi){
-     echo $eventi[2];
-
- }
- echo sizeof($usera->getAllUsers());
+$usera=new Userdb;
+//  echo sizeof($usera->getAllUsers());
 // $redol=$usera->getUserByUsername("Redol");
 // $useri=$usera->getUserByUsername("charlie333");
 // echo $useri[3] .'<br/>';
@@ -165,8 +147,8 @@ function getAllEvents(){
 // $red=new User('Redon','redon42','dasda','user');
 
 // $usera->insertUser($red);
-$userat=$usera->getAllUsers();
-foreach ($userat as $user){
-    echo $user[0].' '. $user[1].' '. $user[2].' '. $user[3]. '<br/>';
-}
+// $userat=$usera->getAllUsers();
+// foreach ($userat as $user){
+//     echo $user[0].' '. $user[1].' '. $user[2].' '. $user[3]. '<br/>';
+// }
 ?>

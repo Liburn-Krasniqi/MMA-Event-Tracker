@@ -68,8 +68,8 @@
     <?php include 'hFooter.php' ?>
     <script src="app.js"></script> 
     <script src="generate-hed-fot.js"></script>
-    <?php include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\ValidimiRegjister.php';
-    include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\validimiLogin.php';
+    <?php include 'C:\xampp\htdocs\MMA-Event-Tracker\phpIncluda\ValidimiRegjister.php';
+    include 'C:\xampp\htdocs\MMA-Event-Tracker\phpIncluda\validimiLogin.php';
     ?>
 </body>
 </html>

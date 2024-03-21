@@ -31,7 +31,7 @@ class User{
         return $this->role;
     }
 }
-include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\Databaza.php';
+include 'C:\xampp\htdocs\MMA-Event-Tracker\Databaza.php';
 
 class Userdb{
     private $connection;

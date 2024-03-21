@@ -17,8 +17,8 @@
 
 <body>
 <?php include 'heder.php' ?>
-<?php include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\usera.php';
-    include_once 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\Databaza.php';
+<?php include 'C:\xampp\htdocs\MMA-Event-Tracker\phpIncluda\usera.php';
+    include_once 'C:\xampp\htdocs\MMA-Event-Tracker\Databaza.php';
 ?>
 
     <main>

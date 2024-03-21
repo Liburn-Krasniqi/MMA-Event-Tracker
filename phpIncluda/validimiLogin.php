@@ -9,7 +9,7 @@ if(isset($_POST['loginBtn'])){
     $username = $_POST['username'];
     $password = $_POST['pass'];
     
-    include_once 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\usera.php';
+    include_once 'C:\xampp\htdocs\MMA-Event-Tracker\phpIncluda\usera.php';
     $i=0;
     
     
@@ -28,7 +28,7 @@ if(isset($_POST['loginBtn'])){
         $_SESSION['role'] = $user[3];
         $_SESSION['loginTime'] = date("H:i:s");
         
-        header("location:C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\index.php");
+        header("location:C:\xampp\htdocs\MMA-Event-Tracker\index.php");
         exit();
       }else{
         $i++;

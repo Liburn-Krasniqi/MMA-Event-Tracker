@@ -37,7 +37,7 @@
                 <div class="Event">
                     <h2>Create News</h2>
                     <div class="fight">
-                        <form action="">
+                        <form id="news-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
                             <label for="name">Title:</label>
                             <input type="text" id="title" name="title">
                             
@@ -50,7 +50,7 @@
                             <label for="date">Date:</label>
                             <input type="date" id="date" name="date" >
                             
-                            <input type="submit" value="Create">
+                            <input type="submit" value="Create" name="create-btn">
                         </form>
                     </div>
                         <h2>News</h2>

@@ -1,7 +1,7 @@
 <?php
 
 $username = $_GET['id'];
-include 'C:\xampp\htdocs\zTmijat\MMA-Event-Tracker\phpIncluda\usera.php';
+include 'C:\xampp\htdocs\MMA-Event-Tracker\phpIncluda\usera.php';
 
 
 

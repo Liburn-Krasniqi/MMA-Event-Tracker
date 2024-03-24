@@ -10,7 +10,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <?php include 'heder.php' ?>
+    <?php include 'heder.php'?>
+    <?php include 'C:\xampp\htdocs\MMA-Event-Tracker\phpIncluda\articles.php'?>
+    
 
     <main>
 
@@ -58,7 +60,25 @@
         <h1>Latest</h1>
         
         <div class="small_articles">
-            
+        <?php 
+            $articleConn = new Articledb();
+            $articles = $articleConn->getAllArticles();
+            foreach ($articles as $article) {
+            echo "
+            <div class='small_article'>
+                <div class='top-part'>
+                    <img src='Img/$article[3]' alt='article thumbnail'>
+                </div>
+                <hr>
+                <div class='bottom-part'>
+                    <h4>$article[2]</h4>
+                    <p>$article[1]</p>
+                </div>
+            </div>
+            ";
+            }
+        ?>
+
             <div class="small_article">
                <div class="top-part">
                     <img src="Img/pht2.jpg" alt=""> 
@@ -69,8 +89,7 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Nulla animi soluta similique obcaecati quidem nihil, repellatautem tempore atque! Iure, a veniam aperiam impedit qui nisiexpedita explicabo ullam magnam?</p>
                 </div>
             </div>
-
-            <div class="small_article">
+            <!-- <div class="small_article">
                 <div class="top-part">
                      <img src="Img/pht4.jpg" alt=""> 
                  </div>
@@ -112,7 +131,7 @@
                      <h4>Kuku qy qa ka ndodh!</h4>
                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Nulla animi soluta similique obcaecati quidem nihil, repellatautem tempore atque! Iure, a veniam aperiam impedit qui nisiexpedita explicabo ullam magnam?</p>
                  </div>
-             </div>
+             </div> -->
 
         </div>
     </main>

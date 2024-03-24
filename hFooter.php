@@ -14,7 +14,7 @@
       <div class="footer-column">
           <h4>Company</h1>
           <ul>
-              <li><a href="Abouti.html">About us</a></li>
+              <li><a href="Abouti.php">About us</a></li>
               <li><a href="">Sign for news letter</a></li>
               <li><a href="">Our sports betting site</a></li>
               <li><a href="">Privacy policy</a></li>

@@ -65,12 +65,12 @@ function scrollToTarget() {
     var targetElement = document.getElementById('About-title-cards');
     console.log('Current Path:', window.location.pathname);
 
-    if (window.location.pathname === '/Abouti.html') {
+    if (window.location.pathname === '/Abouti.php') {
         console.log('Scrolling to target element.');
         targetElement.scrollIntoView({ behavior: 'smooth' });
     } else {
-        console.log('Redirecting to Abouti.html.');
-        window.location.href = 'Abouti.html#About-title-cards';
+        console.log('Redirecting to Abouti.php');
+        window.location.href = 'Abouti.php#About-title-cards';
     }
 }
 /*validimi */

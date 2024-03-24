@@ -18,6 +18,7 @@
 <body>
 <?php include 'heder.php' ?>
 
+<?php include 'C:\xampp\htdocs\MMA-Event-Tracker\phpIncluda\articles.php'?>
     <main>
         
 
@@ -35,7 +36,7 @@
                     
     
                 <div class="Event">
-                    <h2>Create News</h2>
+                    <h1>Create News</h1>
                     <div class="fight">
                         <form id="news-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
                             <label for="name">Title:</label>
@@ -53,8 +54,8 @@
                             <input type="submit" value="Create" name="create-btn">
                         </form>
                     </div>
-                        <h2>News</h2>
-                        <div class="fight " style="height:auto; padding:10px;">
+                        <h1>News</h1>
+                        <div class="fight " style="height:auto; padding:10px; margin: 10px 0 10px 0;">
                             
                             <table>
                                 <thead>
@@ -66,91 +67,57 @@
                                         <th>Author</th>
                                         <th>Date</th>
                                         <th>Delete</th>
-                                        <th>Edit</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <?php    
+
+                                $articleConn = new Articledb();
+                                $articles = $articleConn->getAllArticles();
+                                foreach ($articles as $article){
+                                    echo "
                                     <tr>
-                                        <td>1</td>
-                                        <td>Alex pereira dahet me fm</td>
-                                        <td>chama</td>
-                                        <td>foto</td>
-                                        <td>UFC News</td>
-                                        <td>12/10/22</td>
-                                        <td class="delete-button" onclick="deleteFighter(1)">Delete</td>
-                                        <td class="edit-button" onclick="editFighter(1)">Edit</td>
+                                        
+                                        <td>$article[0]</td>
+                                        <td>$article[2]</td>
+                                        <td>$article[1]</td>
+                                        <td>$article[3]</td>
+                                        <td>$article[4]</td>
+                                        <td>$article[5]</td>
+                                        
+                                        
+                                        <td class='delete-button' ><a href='delete_article.php?id=$article[0]'>Delete</a></td>
                                     </tr>
-                                    <tr>
-                                        <th>NewsID</th>
-                                        <th>Title</th>
-                                        <th>description</th>
-                                        <th>Thumbnail</th>
-                                        <th>Author</th>
-                                        <th>Date</th>
-                                        <th>Delete</th>
-                                        <th>Edit</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Alex pereira dahet me fm</td>
-                                        <td>chama</td>
-                                        <td>foto</td>
-                                        <td>UFC News</td>
-                                        <td>12/10/22</td>
-                                        <td class="delete-button" onclick="deleteFighter(1)">Delete</td>
-                                        <td class="edit-button" onclick="editFighter(1)">Edit</td>
-                                    </tr>
-                                    <tr>
-                                        <th>NewsID</th>
-                                        <th>Title</th>
-                                        <th>description</th>
-                                        <th>Thumbnail</th>
-                                        <th>Author</th>
-                                        <th>Date</th>
-                                        <th>Delete</th>
-                                        <th>Edit</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Alex pereira dahet me fm</td>
-                                        <td>chama</td>
-                                        <td>foto</td>
-                                        <td>UFC News</td>
-                                        <td>12/10/22</td>
-                                        <td class="delete-button" onclick="deleteFighter(1)">Delete</td>
-                                        <td class="edit-button" onclick="editFighter(1)">Edit</td>
-                                    </tr>
-                                    <tr>
-                                        <th>NewsID</th>
-                                        <th>Title</th>
-                                        <th>description</th>
-                                        <th>Thumbnail</th>
-                                        <th>Author</th>
-                                        <th>Date</th>
-                                        <th>Delete</th>
-                                        <th>Edit</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Alex pereira dahet me fm</td>
-                                        <td>chama</td>
-                                        <td>foto</td>
-                                        <td>UFC News</td>
-                                        <td>12/10/22</td>
-                                        <td class="delete-button" onclick="deleteFighter(1)">Delete</td>
-                                        <td class="edit-button" onclick="editFighter(1)">Edit</td>
-                                    </tr>
-                                    
-                                    <!-- Add more rows as needed -->
-                                </tbody>
+                                    ";
+                                }
+                                ?>
+
                             </table>
                         </div>
+                        
+                        <h1>Update News</h1>
+
+                    <div class="fight" style="height:auto; padding:10px; margin: 10px 0 10px 0;">
+
+                        <form id="news-update-form" action="update.php" method="post">
+
+                            <label for="name">Id:</label>
+                            <input type="text" id="id" name="id">
+
+                            <label for="name">Title:</label>
+                            <input type="text" id="title" name="title">
+                            <label for="description">description:</label>
+                            <input type="text" id="description" name="description" >
+                            <br>
+                            <label for="thumbnail">Thumbnail:</label>
+                            <input type="file" id="thumbnail" name="thumbnail" >
+                            <label for="author">Author:</label>
+                            <input type="text" id='author' name='author' >
+                            <label for="date">Date:</label>
+                            <input type="date" id="date" name="date" >
+                            
+                            <input type="submit" value="Update" name="update-btn">
+                        </form>
+                    </div>
 
                 </div>
                 
@@ -159,14 +126,15 @@
     
         </div>
     </main>
-   
+   <?php include 'C:\xampp\htdocs\MMA-Event-Tracker\phpIncluda\insNews.php'?>
+   <?php include 'C:\xampp\htdocs\MMA-Event-Tracker\update.php' ?>
    
     
     <?php include 'hFooter.php' ?>
      <button id="back-to-top-btn"><i class="fa-solid fa-arrow-up"></i></button>
      <script src="generate-hed-fot.js" ></script>
      <script src="app.js"></script>
-     <script>
+     <!-- <script>
          function deleteFighter(fighterId) {
             // Add logic to delete the fighter with the given ID
             console.log('Delete Fighter with ID:', fighterId);
@@ -176,7 +144,7 @@
             // Add logic to edit the fighter with the given ID
             console.log('Edit Fighter with ID:', fighterId);}
 
-     </script>
+     </script> -->
 
      <body> 
      <html>

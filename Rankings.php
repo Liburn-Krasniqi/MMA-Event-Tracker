@@ -17,11 +17,11 @@
 
         <div class="divisions">
             
-            <div class="division-rank">
+            <div class="division-rank active">
                 <div class="rank-row">
                     <h5><span>Men's</span> Pound for Pound</h5>
                     <h2>Sean<br>Strickland</h2>  
-                    <img src="seanStrickland.png" alt=""> 
+                    <img src="Img/Strickland.png" alt=""> 
                     <hr>      
                     <button class="select-btn">
                         <i class="fas fa-chevron-down"></i>
@@ -50,7 +50,7 @@
                 <div class="rank-row">
                     <h5><span>Men's</span> HeavyWeight</h5>
                     <h2>Jon<br>Jones</h2>  
-                    <img src="jonJones.png" alt=""> 
+                    <img src="Img/JONES.png" alt=""> 
                     <hr>      
                     <button class="select-btn">
                         <i class="fas fa-chevron-down"></i>
@@ -78,8 +78,8 @@
             <div class="division-rank">
                 <div class="rank-row">
                     <h5><span>Women's</span> Pound for Pound</h5>
-                    <h2>Alexa<br>Garuso</h2>  
-                    <img src="alexaGaruso.png" alt=""> 
+                    <h2>Alexa<br>Grasso</h2>  
+                    <img src="Img/alexaGaruso.png" alt=""> 
                     <hr>      
                     <button class="select-btn">
                         <i class="fas fa-chevron-down"></i>
@@ -108,7 +108,7 @@
                 <div class="rank-row">
                     <h5><span>Women's</span> FlyWeight</h5>
                     <h2>Alexa<br>Garuso</h2>  
-                    <img src="alexaGaruso.png" alt=""> 
+                    <img src="Img/alexaGaruso.png" alt=""> 
                     <hr>      
                     <button class="select-btn">
                         <i class="fas fa-chevron-down"></i>
@@ -137,7 +137,7 @@
                 <div class="rank-row">
                     <h5><span>Men's</span> Pound for Pound</h5>
                     <h2>Sean<br>Strickland</h2>  
-                    <img src="seanStrickland.png" alt=""> 
+                    <img src="Img/Strickland.png" alt=""> 
                     <hr>      
                     <button class="select-btn">
                         <i class="fas fa-chevron-down"></i>
@@ -168,7 +168,6 @@
     <?php include 'hFooter.php' ?>
     <button id="back-to-top-btn"><i class="fa-solid fa-arrow-up"></i></button>
     <script src="app.js"></script> 
-    <script src="generate-hed-fot.js" >
 
     </script>
 </body>

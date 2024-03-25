@@ -26,22 +26,17 @@
             <div class="articles">
 
                <div class="article" id="article1">
-                    <img src="Img/pht1.jpg" alt="">
-                    <h2>Bismilah ja nisi kijameti!</h2>
+                    <img src="Img/conor.jpg" alt="">
+                    <h2>What is going on?!</h2>
                </div> 
 
                <div class="article" id="article2">
-                    <img src="Img/pht2.jpg" alt="">
-                    <h2>Bismilah</h2>
+                    <img src="Img/Dana-White.jpg" alt="">
+                    <h2>Dana White skiming fighters as per usual</h2>
                </div> 
 
                <div class="article" id="article2">
-                <img src="Img/pht3.jpeg" alt="">
-                <h2>Bismilah</h2>
-               </div> 
-
-               <div class="article" id="article2">
-                <img src="Img/pht4.jpg" alt="">
+                <img src="Img/pht2.jpg" alt="">
                 <h2>Bismilah</h2>
                </div> 
 

@@ -168,7 +168,5 @@
     <?php include 'hFooter.php' ?>
     <button id="back-to-top-btn"><i class="fa-solid fa-arrow-up"></i></button>
     <script src="app.js"></script> 
-
-    </script>
 </body>
 </html>

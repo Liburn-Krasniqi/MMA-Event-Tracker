@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("scroll", scrollFunction);
 
 function scrollFunction() {
-    console.log("Scroll position:", window.scrollY); //per me debug o qikjo
+    //console.log("Scroll position:", window.scrollY); //per me debug o qikjo
 
     if (window.scrollY > 300) {
         if (!backToTopButton.classList.contains("btnEntrance")) {
@@ -93,6 +93,16 @@ function validateForm() {
     }
 }
 
+//show hide per rankings
+const buttonsR = document.querySelectorAll('.select-btn');
+
+buttonsR.forEach(button => {
+    button.addEventListener('click', () => {
+        const divisionRank = button.closest('.division-rank');
+        divisionRank.classList.toggle('active');
+    });
+});
+
 //Slider
 var articles = document.querySelector(".articles");
 var articlesWidth =  parseFloat(getComputedStyle(articles).width);
@@ -123,13 +133,3 @@ function slideRight() {
     }
 }
 
-//show hide per rankings
-const buttonsR = document.querySelectorAll('.select-btn');
-
-buttonsR.forEach(button => {
-    button.addEventListener('click', () => {
-        const divisionRank = button.closest('.division-rank');
-        divisionRank.classList.toggle('active');
-        console.log('Cliked rank btn');
-    });
-});

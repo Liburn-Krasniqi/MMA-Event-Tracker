@@ -73,8 +73,6 @@ main{
     align-items: stretch;
     flex-wrap: wrap;
     flex-direction: column;
-    margin-top: 5px;
-    
 }
 .fight{
     display: flex;
@@ -86,7 +84,7 @@ main{
     justify-content: center;
     align-items: stretch;
     align-content: stretch;
-    
+    margin-bottom: 15px;
     
 }
 .name{

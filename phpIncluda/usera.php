@@ -84,18 +84,6 @@ class Userdb{
         return $user;
     }
 
-    // function updateUser($id,$name,$surname,$email,$username,$password){
-    //      $conn = $this->connection;
-
-    //      $sql = "UPDATE user SET name=?, surname=?, email=?, username=?, password=? WHERE id=?";
-
-    //      $statement = $conn->prepare($sql);
-
-    //      $statement->execute([$name,$surname,$email,$username,$password,$id]);
-
-    //      echo "<script>alert('update was successful'); </script>";
-    // } 
-
     function deleteUser($username){
         $conn = $this->connection;
 
@@ -107,6 +95,7 @@ class Userdb{
 
         echo "<script>alert('delete was successful'); </script>";
    } 
+
    function makeAdmin($username){
         $conn = $this->connection;
 
@@ -121,6 +110,7 @@ class Userdb{
         echo "<script>alert('change to admin was successful'); </script>";
 
    }
+   
    function removeAdmin($username){
     $conn = $this->connection;
 
@@ -135,6 +125,7 @@ class Userdb{
     echo "<script>alert('change to admin was successful'); </script>";
 
 }
+
 //per evente
 function getAllEvents(){
     $conn = $this->connection;
@@ -148,14 +139,15 @@ function getAllEvents(){
 }
 
 }
+//kodi i komentuar ne vijim me ka jepur kancer o zot
 
- $usera=new Userdb;
- $eventet=$usera->getAllEvents();
- foreach($eventet as $eventi){
-     echo $eventi[2];
+//  $usera=new Userdb;
+//  $eventet=$usera->getAllEvents();
+//  foreach($eventet as $eventi){
+//      echo $eventi[2];
 
- }
- echo sizeof($usera->getAllUsers());
+//  }
+//  echo sizeof($usera->getAllUsers());
 // $redol=$usera->getUserByUsername("Redol");
 // $useri=$usera->getUserByUsername("charlie333");
 // echo $useri[3] .'<br/>';
@@ -165,8 +157,8 @@ function getAllEvents(){
 // $red=new User('Redon','redon42','dasda','user');
 
 // $usera->insertUser($red);
-$userat=$usera->getAllUsers();
-foreach ($userat as $user){
-    echo $user[0].' '. $user[1].' '. $user[2].' '. $user[3]. '<br/>';
-}
+// $userat=$usera->getAllUsers();
+// foreach ($userat as $user){
+//     echo $user[0].' '. $user[1].' '. $user[2].' '. $user[3]. '<br/>';
+// }
 ?>

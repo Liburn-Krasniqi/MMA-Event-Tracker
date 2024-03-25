@@ -3,14 +3,16 @@
 session_start();
 $show="display:none;";
 $login="Log in";
-if(isset($_SESSION['username'])) 
-     $login=$_SESSION['username'];
+$loginlink="Login.php";
+if(isset($_SESSION['username'])){
+    $login='log out';
+    $loginlink="Logout.php";
+} 
 if(isset($_SESSION['username']))   {
     if($_SESSION['role'] == "admin"){
         $show = "display:inline;";
-        
     }
-    }
+ }
     
 ?>
 
@@ -48,7 +50,7 @@ if(isset($_SESSION['username']))   {
         </div>
         <div id='darkbutoni'>
         <i id="theme-toggle">☾</i> <i id="theme-toggle-dark">☼</i> </div>
-        <a href="Login.php"><?php echo $login?></a>
+        <a href="<?php echo $loginlink?>"><?php echo $login?></a>
         
     </div> 
     </header>

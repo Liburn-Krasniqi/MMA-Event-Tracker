@@ -28,7 +28,7 @@
         <div class="UpcomingEvents">
             <h2 class="EventPreview">DashBoard</h2>
             <h2 class="EventPreview"><a href="dashboard.php">Fighter</a> </h2>
-            <h2 class="EventPreview"><a href="#">Event</a></h2>
+            <h2 class="EventPreview"><a href="EventDB.php">Event</a></h2>
             <h2 class="EventPreview"><a href="NewsDB.php">News</a></h2>
             <h2 class="EventPreview"><a href="UserDB.php">Users</a></h2>
             

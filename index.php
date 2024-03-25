@@ -18,8 +18,8 @@
         
 
         </div>
-        <div class="UpcomingEvents">
-            <h2 class="EventPreview">UpcomingEvents</h2>
+        <div class="Upcoming-Events">
+            <h1 class="EventPreview">Upcoming Events</h1>
             <?php       
                                 $db=new Userdb;
                                 $eventet=$db->getAllEvents();

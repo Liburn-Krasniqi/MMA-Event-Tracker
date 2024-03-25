@@ -17,7 +17,7 @@
 
         <div class="divisions">
             
-            <div class="division-rank active">
+            <div class="division-rank">
                 <div class="rank-row">
                     <h5><span>Men's</span> Pound for Pound</h5>
                     <h2>Sean<br>Strickland</h2>  

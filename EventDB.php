@@ -33,7 +33,7 @@
                     
     
                 <div class="Event">
-                    <h2>Create Event</h2>
+                    <h1>Create Event</h1>
                     <div class="fight">
                         <form action="">
                             <label for="name">Name:</label>
@@ -50,7 +50,7 @@
                             <input type="submit" value="Create">
                         </form>
                     </div>
-                        <h2>Event</h2>
+                        <h1>Event</h1>
                         <div class="fight " style="height:auto; padding:10px;">
                             
                             <table>
